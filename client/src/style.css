@@ -1,0 +1,21 @@
+/* @import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css'); */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap');
+
+*{
+    font-family: 'Noto Sans KR', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    width:100%;
+    overflow-x: hidden;
+}
+
+li{list-style:none; }
+
+a {
+    color:#000;
+    text-decoration: none
+}

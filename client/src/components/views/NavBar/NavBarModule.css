@@ -1,0 +1,39 @@
+.Nav_right{
+    font-weight:900;
+    font-size: 20px;
+    color:#5c5c5c;
+    margin-top: 5px;
+}
+
+h1{
+    font-size: 25px;
+    color:#5c5c5c;
+}
+
+h1 a{
+    color:#5c5c5c;
+}
+
+.nav_container{
+    width:100%;
+    position: absolute;
+    top:0;
+    left: 0;
+    height: 90px;
+}
+
+.centerbox{
+    width:76.30%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Nav_right ul{
+    width:528px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
