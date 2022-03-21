@@ -1,8 +1,9 @@
 /* @import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css'); */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap');
 
 *{
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -18,4 +19,47 @@ li{list-style:none; }
 a {
     color:#000;
     text-decoration: none
+}
+
+button{
+    outline: none;
+    border:0px;
+}
+
+label{
+    position: absolute;
+    color:#383838;
+    top: 50%;
+    left: 11px;
+    transform: translateY(-50%);
+}
+
+form{
+    width:100%;
+}
+
+input{
+    width:100%;
+    outline: none;
+    border: none;
+    color: rgb(68, 68, 68);
+    font-size: 15px;
+    margin-top: 18px;
+}
+
+input::-webkit-input-placeholder{
+    font-size:15px;
+    color: #383838;
+    opacity: 0.33;
+}
+input::-moz-input-placeholder{ 
+    font-size:15px;
+    color: #383838;
+    opacity: 0.33; 
+}
+
+textarea::placeholder {
+    font-size:15px;
+    color: #383838;
+    opacity: 0.33; 
 }

@@ -1,17 +1,17 @@
 .Nav_right{
     font-weight:900;
-    font-size: 20px;
-    color:#5c5c5c;
+    font-size: 16px;
+    color:#383838;
     margin-top: 5px;
 }
 
-h1{
-    font-size: 25px;
-    color:#5c5c5c;
+.nav_container a{
+    color:#383838;
 }
 
-h1 a{
-    color:#5c5c5c;
+.nav_container h1{
+    width:100px;
+    height: 32.36px;
 }
 
 .nav_container{
@@ -19,7 +19,8 @@ h1 a{
     position: absolute;
     top:0;
     left: 0;
-    height: 90px;
+    height: 80px;
+    background-color: #fff;
 }
 
 .centerbox{
@@ -32,8 +33,13 @@ h1 a{
 }
 
 .Nav_right ul{
-    width:528px;
+    /* width:430px; */
+    width:400px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+@media screen and (max-width:1024px){
+    
 }

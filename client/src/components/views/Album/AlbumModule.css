@@ -1,0 +1,179 @@
+.album_wrap{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height: calc(100vh - 80px);
+    min-height: 820px;
+    margin-top: 80px;
+    background-color: #C4B595;
+}
+
+.album_container{
+    position: relative;
+    padding: 70px;
+    /* width:76.30%; */
+    width:70%;
+    height: 638px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 11px 11px 0px #918570;
+}
+
+.photocard_wrap{
+    width:100%;
+    height: 410px;
+    padding: 50px;
+    background-color: rgba(196,181,149,0.25);
+}
+
+.photocard_empty{
+    width:100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: rgba(196,181,149,0.5);
+}
+
+.photocard_empty a{
+    color: rgba(196,181,149,1);
+    font-size: 20px;
+}
+
+.photocard_empty a:hover{
+    color: rgb(141, 124, 86);
+}
+
+.photocard_container{
+    width:100%;
+    height: 100%;
+    overflow-y: scroll;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(350px, auto);
+}
+
+.photocard_container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.photocard_container::-webkit-scrollbar-thumb {
+    background-color: #9E9E9E;
+    border-radius: 5px;
+}
+
+.photocard_container::-webkit-scrollbar-track {
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.photocard{
+    position: relative;
+    width:205px;
+    height: auto;
+    cursor: pointer;
+}
+
+.photocard img{
+    width:100%;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.photocard p{
+    font-size: 13px;
+}
+
+.album_container h2{
+    font-size: 39.53px;
+    margin-bottom: 50px;
+}
+
+.album_decoration{
+    position: absolute;
+    top:-46.188px;
+    right: 0;
+    width:68.253px;
+    height: auto;
+}
+
+.photocard_button{
+    width:65px;
+    position: absolute;
+    display: none;
+    display: flex;
+    justify-content: space-between;
+    top: 245px;
+    right: 12px;
+    opacity: 0;
+}
+
+.photocard_button.on{
+    opacity: 1;
+}
+
+.photocard_button button{
+    text-transform: uppercase;
+    outline: none;
+    border: none;
+    width:30px;
+    height: 30px;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    color:#fff;
+    background-color: #b8a98b;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.photocard_button button:hover{
+    background-color: #7c6b4a;
+}
+
+.form_search{
+    position:absolute; 
+    top:85px; 
+    right:70px; 
+    width:20%;
+}
+
+.form_search div{
+    width: 100%;
+    height: 30px;
+    border-bottom: 1.5px solid #ccc;
+}
+
+.form_search input{
+    width:80%;
+    float:left;
+    margin-top: 0px;
+}
+
+.form_search button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+    border: none;
+}
+
+@media screen and (max-width:1600px){
+    .photocard_container{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width:1300px){
+    .photocard_container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width:990px){
+    .photocard_container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

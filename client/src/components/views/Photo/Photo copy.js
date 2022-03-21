@@ -109,17 +109,18 @@ function Photo(props) {
   }
 
   const testFun = () => {
-    if (photoRef.current === undefined || photoRef.current === null) {
+    if(photoRef.current === undefined || photoRef.current === null){
 
-    } else {
+    }else{
       let rect = photoRef.current.getBoundingClientRect();
-      setTest({
-        left: rect.left,
-        top: rect.top,
-        bottom: rect.bottom,
-        right: rect.right
-      })
+    setTest({
+      left: rect.left,
+      top: rect.top,
+      bottom: rect.bottom,
+      right: rect.right
+    })
     }
+    
   }
 
   useEffect(() => {
@@ -149,15 +150,8 @@ function Photo(props) {
   useEffect(() => {
     if(targets === undefined || targets === null){
     }else{
-      if (targets.length > 0 && targets[0].hasAttribute("id")) {
-        if (targets[targets.length-1] === chaseRef.current) {
-          let body = targets
-          let pod = body.indexOf(targets[targets.length-1])
-          body.splice(pod, 1)
-          body.map(e=>(e.children[0].style.display ="block"))
-        }else{
-          targets.map(e=>(e.children[0].style.display ="block"))
-        }
+      if(targets.length> 0 && targets[0].hasAttribute("id")){
+        targets.map(e=>(e.children[0].style.display ="block"))
       }else{
         setSnap(false)
       }
@@ -185,8 +179,6 @@ function Photo(props) {
     }
     
   }, [Attachment])
-
-  console.log(targets)
 
   
   return <div className="container" >

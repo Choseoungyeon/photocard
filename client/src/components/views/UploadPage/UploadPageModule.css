@@ -1,0 +1,202 @@
+.uploadeDetail_wrap{
+    width:100%;
+    height: calc(100vh - 80px);
+    min-height: 820px;
+    margin-top: 80px;
+    background-color: #C4B595;
+}
+
+.uploadeDetail_wrap h2{
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 54px;
+}
+
+.uploadeDetail_container{
+    position: relative;
+    float: left;
+    padding: 60px 80px 80px 80px;
+    /* width:76.30%; */
+    width:1137.05px;
+    transform: translateX(-50%);
+    margin-top: 120px;
+    margin-bottom: 120px;
+    left: 50%;
+    background-color: #fff;
+    box-shadow: 11px 11px 0px #918570;
+}
+
+.uploadeDetail_decoration{
+    position: absolute;
+    top:-46.188px;
+    right: 0;
+    width:68.253px;
+    height: auto;
+}
+
+.uploadPage_left{
+    width:434px;
+    height: 401px;
+    float: left;
+    background-color: #F6F1E4;
+    border-radius: 27px;
+}
+
+.uploadPage_right{
+    width:480px;
+    height:401px;
+    float: right;
+}
+
+.uploadPage_right div{
+    width: 100%;
+    position: relative;
+    height: 56px;
+    border-bottom: 1.5px solid #ccc;
+    padding-left: 55px;
+}
+
+.uploadPage_right div input{
+    font-family: 'Noto Sans KR', sans-serif;
+    margin-top: 19px;
+    font-size: 14px;
+    color:#919191
+}
+
+.uploadPage_right div label{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    top: 29px;
+}
+
+.uploadPage_right div:nth-of-type(3){
+    padding-left:11px;
+    padding-top: 30px;
+    height:227px;
+    margin-bottom: 26px;
+}
+
+.uploadPage_right div:nth-of-type(3) label{
+    top: 18px;
+    left: 11px;
+    transform: none;
+}
+
+.uploadPage_right div:nth-of-type(3) textarea{
+    margin-top:20px;
+    border: 0px;
+    width:100%;
+    height: 80%;
+    outline: none;
+    color: rgb(68, 68, 68);
+    font-size: 14px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.uploadPage_right input{
+    margin-left: 15px;
+    margin-top: 11px;
+}
+
+.Community_button{
+    width:90px;
+    height: 35px;
+    float: right;
+    background-color: #E5E5E5;
+    color:#747474;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-left: 15px;
+}
+
+.Community_button:hover{
+    background-color: #747474;
+    color: #fff;
+}
+
+.uploadPage_right input::-webkit-input-placeholder{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:14px;
+}
+.uploadPage_right input::-moz-input-placeholder{
+    font-family: 'Noto Sans KR', sans-serif; 
+    font-size:14px;
+}
+
+.uploadPage_right textarea::placeholder {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:14px;
+}
+
+.slick-dots{
+    bottom: -15px;
+    height: 20px;
+}
+
+.slick-dots li button:before{
+    color: #C4B595;
+}
+
+.slick-dots li.slick-active button:before{
+    color: #C4B595;
+}
+
+.slick-dots li{
+    margin: 0px;
+}
+
+.upload_albumList{
+    position: absolute;
+    padding: 50px;
+    bottom: 0px;
+    width:1137.05px;
+    height: 390px;
+    margin: 0 auto;
+    background-color: #fff;
+    z-index: 5;
+    display: none;
+}
+
+.albumList_photocard{
+    width: 150px;
+    height: auto;
+    float: left;
+    margin-right: 30px;
+}
+
+.albumList_photocard img{
+    width:100%;
+    height: auto;
+}
+
+.albumList_photocard input{
+    margin-top:1px;
+    width:auto
+}
+
+.albumList_container{
+    padding: 30px;
+    height: 100%;
+    background-color: rgba(196,181,149,0.25);
+    overflow: hidden;
+}
+
+.modal{
+    background-color: #000;
+    opacity: 0.6;
+    position: absolute;
+    width:100%;
+    height: calc(100vh - 80px);
+    left: 0px;
+    top: 80px;
+    display: none;
+}
+
+.modal.on{
+    display: block;
+}
+
+.upload_albumList.on{
+    display: block;
+}
