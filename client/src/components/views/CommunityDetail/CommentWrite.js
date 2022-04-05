@@ -1,12 +1,15 @@
-import React,{useState} from 'react'
+import React,{useState, useRef, useEffect} from 'react'
 import { useParams } from "react-router";
-import axios from 'axios'
+import { useDispatch} from 'react-redux';
+import { saveComments } from '../../../_action/comment_action';
 import {useSelector} from 'react-redux'
 
-function CommentWrite() {
+function CommentWrite(props) {
+    const dispatch = useDispatch();
     const user = useSelector(state => state.user)
     const {communityId} = useParams();
     const [Content, setContent] = useState("")
+    const replyId = useRef()
 
     const contentHandler = (e) => {
         setContent(e.target.value)
@@ -18,23 +21,27 @@ function CommentWrite() {
         const variables = {
             content : Content,
             writer: user.userData._id,
-            postId: communityId
+            postId: communityId,
+            ...replyId.current
         }
 
-        axios.post('/api/comment/saveComment', variables)
-        .then(response =>{
-            if(response.data.success){
-                console.log(response.data.result)
-                setContent("")
-            }else{
-                alert('커맨트를 저장하지 못했스비다')
-            }
-        })
+        console.log(variables)
+
+        dispatch(saveComments(variables))
+        .then(setContent(""))
     }
 
+    useEffect(() => {
+        if(props.replyId === undefined){
+        }else{
+          replyId.current = {responseTo : props.replyId}
+        }
+  
+      }, [props.replyId])
+
     return (
-        <form>
-            <textarea value={Content} style={{ height: "50px", width: "87.61%" }} onChange={contentHandler} placeholder="write more comment...." />
+        <form className='commentWrite_wrap'>
+            <textarea value={Content} onChange={contentHandler} placeholder="write more comment...." />
             <br />
             <button onClick={onSubmitHandler}>SUBMIT</button>
         </form>

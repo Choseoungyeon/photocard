@@ -5,7 +5,6 @@
     width:100%;
     height: calc(100vh - 80px);
     min-height: 820px;
-    margin-top: 80px;
     background-color: #C4B595;
 }
 
@@ -161,6 +160,7 @@
 @media screen and (max-width:1023px){
     .community_container{
         height:700px;
+        
     }
     .community_wrap h2{
         font-size: 40px;
@@ -187,5 +187,50 @@
     
     .community_id{
         width:8%
+    }
+}
+
+@media screen and (max-width:768px){
+    .community_container{
+        width:100%;
+        padding: 83px 7% 65px;
+    }
+
+    .community_wrap h2{
+        font-size: 32px;
+    }
+
+    .community_container td{
+        font-size: 12px;
+    }
+
+    .community_container thead{
+        font-size: 13.5px;
+    }
+    
+    .community_date{
+        display: none;
+    }
+
+    .community_container .community_title{
+        border-right: 0px;
+    }
+
+    .community_form_search{
+        width:70%;
+        min-width: 250px;
+        max-width: 330px;
+    }
+
+    .community_form_selection{
+        font-size: 13.5px;
+    }
+
+    .community_form_search input{
+        font-size: 13px;
+    }
+
+    .community_form_search input::placeholder{
+        font-size: 13px;
     }
 }

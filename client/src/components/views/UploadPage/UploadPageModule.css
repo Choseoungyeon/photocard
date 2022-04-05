@@ -2,7 +2,6 @@
     width:100%;
     height: calc(100vh - 80px);
     min-height: 820px;
-    margin-top: 80px;
     background-color: #C4B595;
 }
 
@@ -15,7 +14,7 @@
 .uploadeDetail_container{
     position: relative;
     float: left;
-    padding: 60px 80px 80px 80px;
+    padding: 60px 80px;
     /* width:76.30%; */
     width:1137.05px;
     transform: translateX(-50%);
@@ -29,7 +28,7 @@
 .uploadeDetail_decoration{
     position: absolute;
     top:-46.188px;
-    right: 0;
+    right: 30px;
     width:68.253px;
     height: auto;
 }
@@ -88,7 +87,7 @@
     width:100%;
     height: 80%;
     outline: none;
-    color: rgb(68, 68, 68);
+    color: #919191;
     font-size: 14px;
     font-family: 'Noto Sans KR', sans-serif;
 }
@@ -146,13 +145,20 @@
     margin: 0px;
 }
 
+.slick-initialized{
+    width: 70%; 
+    height: 325px; 
+    margin: 38px auto;
+}
+
 .upload_albumList{
-    position: absolute;
+    position: fixed;
     padding: 50px;
     bottom: 0px;
     width:1137.05px;
     height: 390px;
-    margin: 0 auto;
+    left:50%;
+    transform: translate(-50%);
     background-color: #fff;
     z-index: 5;
     display: none;
@@ -179,13 +185,13 @@
     padding: 30px;
     height: 100%;
     background-color: rgba(196,181,149,0.25);
-    overflow: hidden;
+    overflow-y: scroll;
 }
 
 .modal{
     background-color: #000;
     opacity: 0.6;
-    position: absolute;
+    position: fixed;
     width:100%;
     height: calc(100vh - 80px);
     left: 0px;

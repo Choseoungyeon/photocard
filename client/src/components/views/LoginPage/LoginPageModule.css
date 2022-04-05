@@ -5,7 +5,6 @@
     width:100%;
     height: calc(100vh - 80px);
     min-height: 820px;
-    margin-top: 80px;
     background-color: #C4B595;
 }
 
@@ -39,7 +38,6 @@
 .form_container p{
     margin-top: 23px;
     float: right;
-    font-weight: 14px;
     color: #383838;
     opacity: 0.33;
     transition: 0.5s;
@@ -75,4 +73,34 @@
     right: 0;
     width:68.253px;
     height: auto;
+}
+
+@media screen and (max-width:768px){
+    .form_container{
+        max-width: none;
+        padding: 70.198px 10%;
+        
+    }
+
+    .form_container h2{
+        font-size: 34px;
+    
+    }
+
+    .form_container p{
+        font-size: 15px;
+    }
+
+    .form_subContainer input{
+        font-size: 14px;
+    }
+
+    .form_subContainer input::placeholder{
+        font-size: 14px;
+    }
+
+    .form_container button{
+        font-size: 16px;
+    }
+
 }

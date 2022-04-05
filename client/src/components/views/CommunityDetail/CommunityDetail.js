@@ -1,7 +1,10 @@
 import React, {useState,useEffect} from 'react'
 import uploadeDetail_decoration from '../../../img/Form/form_decoration.svg'
-import { useParams } from "react-router";
+import { useParams, useNavigate } from "react-router";
+import { useDispatch} from 'react-redux';
+import { getComments } from '../../../_action/comment_action';
 import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
+import fileDownload from "js-file-download";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -10,11 +13,11 @@ import Comment from './Comment';
 import axios from 'axios'
 
 function CommunityDetail(props) {
-
+    const dispatch = useDispatch();
+    const navigate =useNavigate();
     const [Select, setSelect] = useState([])
     const [User, setUser] = useState("")
     const {communityId} = useParams();
-    const [Comments, setComments] = useState([])
 
     const SampleNextArrow = (props) => {
         const { className, onClick } = props;
@@ -36,11 +39,27 @@ function CommunityDetail(props) {
         );
     }
 
+    const handleDownload = (url, filename) => {
+        url.forEach((e)=>{
+            axios
+            .get(e, {
+                responseType: "blob"
+            })
+            .then((res) => {
+                fileDownload(res.data, filename);
+            });
+        })
+    };
+
     const onUserHandler =()=>{
         if (props.user.userData) {
             setUser(props.user.userData._id)
         }
     }
+
+    const modifyPageHandler = (communityId)=>{
+        navigate(`/community/modifyPage/${communityId}`)
+      }
 
     const settings = {
         dots: true,
@@ -60,43 +79,40 @@ function CommunityDetail(props) {
             })
             .catch(err => alert(err))
 
-        axios.get(`/api/comment/getComments?id=${communityId}`)
-        .then(response=>{
-            if(response.data.success){
-                setComments(response.data.comment)
-            }else{
-                alert("코멘트 정보를 가져오는데 실패했습니다")
-            }
-        })
+        // axios.get(`/api/comment/getComments?id=${communityId}`)
+        // .then(response=>{
+        //     if(response.data.success){
+        //         setComments(response.data.comment)
+        //     }else{
+        //         alert("코멘트 정보를 가져오는데 실패했습니다")
+        //     }
+        // })
 
+        dispatch(getComments(communityId))
         onUserHandler()
     }, [])
 
     return (
         <div className='uploadeDetail_wrap'>
-            <div className='uploadeDetail_container' style={{padding:"60px 80px 60px 80px"}}>
+            <div className='uploadeDetail_container'>
                 <img className='uploadeDetail_decoration' src={uploadeDetail_decoration} alt="uploadeDetail_decoration" />
                 <div className='uploadPage_left'>
                     {Select.length === 0 ?
                         null : Select.images.length === 1 ?
-                            <div>
-                                {Select.images.map((e, index) => (
-                                    <div className='slick-slider-1' key={index}>
-                                        <SamplePrevArrow className="Arrow" />
-                                        <img className='upload_photocard_select' style={{ width: "220px", height: "auto" }} src={e} alt="upload_photocard_select" />
-                                        <SampleNextArrow className="Arrow" />
-                                    </div>
-                                ))}
-
-                            </div> :
-                            <Slider {...settings} style={{ width: "70%", height: "325px", margin: "38px auto" }}>
+                            <div className='slick-slider-1'>
+                                <SamplePrevArrow className="Arrow prev" />
+                                <img className='upload_photocard_select' src={Select.images[0]} alt="upload_photocard_select" />
+                                <SampleNextArrow className="Arrow" />
+                            </div>
+                            :
+                            <Slider {...settings}>
                                 {Select.images.map((e, index) => (
                                     <div className='slick-slider' key={index}>
                                         <img className='upload_photocard_select' style={{ margin: "0 auto", width: "220px", height: "auto" }} src={e} alt="upload_photocard_select" />
                                     </div>
                                 ))}
                             </Slider>
-                        }
+                    }
                 </div>
                 <div className='communityDetail_right'>
                     <div className='communityDetail_right_detailBox'>
@@ -116,18 +132,18 @@ function CommunityDetail(props) {
                             <h3>Content :</h3>
                             {Select.length === 0 ? null : <p>{Select.content}</p>}
                         </div>
-                        <button className='Community_button'>DOWNLOAD</button>
+                        <button className='Community_button' onClick={()=>handleDownload(Select.images,"photocard.png")}>DOWNLOAD</button>
                         
                         {Select.length===0 ? null : 
                             User===Select.writer ? 
                                 <div className='modify_button'>
-                                    <button className='Community_button'>MODIFY</button>
+                                    <button className='Community_button' onClick={()=>modifyPageHandler(communityId)}>MODIFY</button>
                                     <button className='Community_button'>DELETE</button>
                                 </div> :
                             null}
                     </div>
                 </div>
-                <Comment commentInfo={Comment} />
+                <Comment/>
             </div>
             <div className='background'></div>
         </div>

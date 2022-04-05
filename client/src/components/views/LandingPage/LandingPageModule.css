@@ -1,6 +1,5 @@
 .landingPage_wrap{
     height: calc(100vh - 80px);
     min-height: 820px;
-    margin-top: 80px;
     background-color: #C4B595;
 }

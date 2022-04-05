@@ -5,15 +5,14 @@
     width:100%;
     height: calc(100vh - 80px);
     min-height: 820px;
-    margin-top: 80px;
     background-color: #C4B595;
 }
 
 .album_container{
     position: relative;
     padding: 70px;
-    /* width:76.30%; */
-    width:70%;
+    width:76.30%;
+    /* width:70%; */
     height: 638px;
     margin: 0 auto;
     background-color: #fff;
@@ -51,8 +50,8 @@
     height: 100%;
     overflow-y: scroll;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: minmax(350px, auto);
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: minmax(330px, auto);
 }
 
 .photocard_container::-webkit-scrollbar {
@@ -94,7 +93,7 @@
 .album_decoration{
     position: absolute;
     top:-46.188px;
-    right: 0;
+    right: 30px;
     width:68.253px;
     height: auto;
 }
@@ -138,6 +137,7 @@
     top:85px; 
     right:70px; 
     width:20%;
+    min-width: 200px;
 }
 
 .form_search div{
@@ -160,20 +160,101 @@
     border: none;
 }
 
-@media screen and (max-width:1600px){
+@media screen and (max-width:1800px){
+    .photocard_container{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media screen and (max-width:1500px){
     .photocard_container{
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-@media screen and (max-width:1300px){
+@media screen and (max-width:1200px){
     .photocard_container{
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .album_container{
+        /* width:65%; */
+        min-width: 720px;
+    }    
 }
 
-@media screen and (max-width:990px){
+@media screen and (max-width:768px){
     .photocard_container{
-        grid-template-columns: repeat(1, 1fr);
+        display: block;
+    }
+
+    .album_container h2{
+        font-size: 39.53px;
+        margin-bottom: 110px;
+        text-align: center;
+    }
+
+    .form_search{
+        position:absolute; 
+        top:150px; 
+        left:50%;
+        transform: translateX(-50%); 
+        width:20%;
+        min-width: 230px;
+    }
+
+    .album_container{
+        width:100%;
+        padding: 70px 0px;
+        min-width: 0px;
+        height: 700px;
+    }
+    
+    .album_container h2{
+        font-size: 32px;
+    }
+
+    .photocard{
+        width:30%;
+        float: left;
+        height: auto;
+        margin-right: 5%;
+        margin-bottom: 5%;
+    }
+
+    .photocard:nth-of-type(3n){
+        margin-right: 0px;
+    }
+
+    .photocard_wrap{
+        padding: 7%;
+    }
+
+    .photocard_container::-webkit-scrollbar {
+        display: none;
+    }
+
+    .photocard_button{
+        top:unset;
+        bottom: 5vw;
+    }
+}
+
+@media screen and (max-width:560px){
+    .photocard{
+        width:47.5%;
+    }
+
+    .photocard:nth-of-type(2n){
+        margin-right: 0px;
+    }
+
+    .photocard:nth-of-type(3n){
+        margin-right: 5%;
+    }
+
+    .photocard_button{
+        top:unset;
+        bottom: 8vw;
     }
 }

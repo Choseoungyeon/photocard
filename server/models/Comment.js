@@ -12,7 +12,7 @@ const commentSchema = mongoose.Schema({
     },
     responseTo:{
         type : Schema.Types.ObjectId,
-        ref : 'User'
+        ref : 'Comment'
     },
     content:{
         type : String,

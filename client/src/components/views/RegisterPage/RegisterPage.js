@@ -34,17 +34,20 @@ function RegisterPage() {
     }
 
     const onSubmitHandler = (event)=>{
+        if(Password.length === 0 ||
+            Name.length === 0 ||
+            ConfirmPassword.length === 0 ||
+            Email.length === 0) return alert('내용을 전부 입력해주세요')
+
+        if(Password !== ConfirmPassword) return alert('비밀번호와 비밀번호 확인은 같아야합니다.')
+
         event.preventDefault();
         let body = {
             email: Email,
             password: Password,
             name:Name
         }
-
-        if(Password !== ConfirmPassword){
-            return alert('비밀번호롸 비밀번호 확인은 같아야합니다.')
-        }
-        
+    
         dispatch(registerUser(body))
             .then(response => {
                 if (response.payload.success) {

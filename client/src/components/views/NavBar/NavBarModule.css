@@ -1,3 +1,13 @@
+.nav_container{
+    width:100%;
+    position: sticky;
+    top:0;
+    left: 0;
+    height: 80px;
+    background-color: #fff;
+    z-index: 5;
+}
+
 .Nav_right{
     font-weight:900;
     font-size: 16px;
@@ -12,15 +22,6 @@
 .nav_container h1{
     width:100px;
     height: 32.36px;
-}
-
-.nav_container{
-    width:100%;
-    position: absolute;
-    top:0;
-    left: 0;
-    height: 80px;
-    background-color: #fff;
 }
 
 .centerbox{
@@ -40,6 +41,125 @@
     align-items: center;
 }
 
+.mobile{
+    display: none;
+}
+
+.userIcon{
+    width: 29px;
+    height: 29px;
+}
+
+.Nav_mobile_stone{
+    margin-top: 0px;
+        position: absolute;
+        padding-top: 85px;
+        top:80px;
+        right: 0px;
+        width:190px;
+        transform: translateX(190px);
+        height: calc(100vh - 80px);
+        z-index: 3;
+        background-color: #F6F1E4;
+        transition: 0.3s;
+        opacity: 0;
+}
+
+.Nav_mobile_stone.on{
+    opacity: 1;
+        transform: translateX(0px);
+}
+
+.Nav_mobile_stone ul{
+    width:100%;
+    height: 287px;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+}
+
+.Nav_mobile_stone li>a{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
 @media screen and (max-width:1024px){
+
+    .Nav_stone{
+        width:350px;
+    }
+}
+
+@media screen and (max-width:768px){
+    .centerbox{
+        width:86%;
+    }
+
+    .Nav_stone.Nav_stone{
+        display: none;
+    }
+
+    .Nav_mobile {
+        position: absolute;
+        top: 30px;
+        right: 7vw;
+        cursor: pointer;
+        width: 35px;
+        height: 24px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        
+    }
+
+    .Nav_mobile span{
+        border-radius:20px;
+        width:100%;
+        height: 3px;
+        background-color: #383838;
+        transition: 0.3s;
+    }
+
+    .Nav_mobile.on span:nth-child(2){
+        display: none;
+    }
+
+    .Nav_mobile.on span:nth-child(1) {
+        width: 38px;
+        transform: rotate(35deg);
+        transform-origin: left top;
+    }
     
+    .Nav_mobile.on span:nth-child(3) {
+        width: 38px;
+        transform: rotate(-35deg);
+        transform-origin: left bottom;
+    }
+
+    .mobile{
+        display: block;
+    }
+
+    .Nav_modal {
+        background-color: #000;
+        opacity: 0.6;
+        position: fixed;
+        width: 100%;
+        height: calc(100vh - 80px);
+        left: 0px;
+        top: 80px;
+        z-index: 2;
+        display: none;
+    }
+
+    .Nav_modal.on{
+        display: block;
+    }
+
+    .userIcon{
+        width: 34px;
+        height: 34px;
+        margin-bottom: 10px;
+    }
 }

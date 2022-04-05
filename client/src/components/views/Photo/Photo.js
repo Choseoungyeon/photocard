@@ -11,6 +11,7 @@ import Dropzone from 'react-dropzone'
 import html2canvas from "html2canvas";
 
 function Photo(props) {
+  const [loading, setLoading] = useState(false);
   const [Radio, setRadio] = useState({});
   const [Test, setTest] = useState({});
   const [Data, setData] = useState("");
@@ -38,6 +39,7 @@ function Photo(props) {
   }
 
   const saveAs = async (img) => {
+    setLoading(true)
     const test = {
       can: img
     }
@@ -63,11 +65,11 @@ function Photo(props) {
 
     axios.post('/api/photocard', body).then(response => {
       if (response.data.success) {
-          navigate('/')
+        navigate('/')
       } else {
-          alert('상품 업로드에 실패했습니다.')
+        alert('상품 업로드에 실패했습니다.')
       }
-  })
+    }).finally(setLoading(false))
   };
 
   const printDocument = domElement => {
@@ -123,8 +125,6 @@ function Photo(props) {
   }
 
   useEffect(() => {
-    axios.get('/api/hello')
-      .then(response => console.log(response.data))
     let body = { FillDrip: ["#CACFE3", "#838BB2", "#E4A99B", "#F2EEE5","#000000"] }
     const Imgkeys = ["Ribbon", "Sticker"]
 
@@ -185,9 +185,6 @@ function Photo(props) {
     }
     
   }, [Attachment])
-
-  console.log(targets)
-
   
   return <div className="container" >
     <div className="photo_container">
@@ -364,6 +361,7 @@ function Photo(props) {
         </div>
       </div>
     </div>
+    {loading?<div className='chase_modal'>Loading</div>:null}
   </div>;
 }
 

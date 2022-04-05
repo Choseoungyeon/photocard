@@ -12,6 +12,7 @@ import LandingPage from "./components/views/LandingPage/LandingPage";
 import Album from "./components/views/Album/Album";
 import Community from "./components/views/Community/Community";
 import UploadPage from "./components/views/UploadPage/UploadPage";
+import ModifyPage from "./components/views/ModifyPage/ModifyPage";
 import CommunityDetail from "./components/views/CommunityDetail/CommunityDetail";
 import Auth from './hoc/auth'
 
@@ -24,6 +25,7 @@ function App() {
   const NewCommunity = Auth(Community, null)
   const NewUploadPage = Auth(UploadPage, true)
   const NewCommunityDetail = Auth(CommunityDetail, true)
+  const NewModifyPage = Auth(ModifyPage, true)
 
  return<Router>
    <Nav />
@@ -36,6 +38,7 @@ function App() {
      <Route path="/community" element={<NewCommunity />}></Route>
      <Route path="/community/:communityId" element={<NewCommunityDetail />}></Route>
      <Route path="/community/upload" element={<NewUploadPage />}></Route>
+     <Route path="/community/modifyPage/:communityId" element={<NewModifyPage />}></Route>
    </Routes>
  </Router>
 }
