@@ -3,6 +3,7 @@
     height: calc(100vh - 80px);
     min-height: 820px;
     background-color: #C4B595;
+    margin-top: 80px;
 }
 
 .uploadeDetail_wrap h2{
