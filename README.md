@@ -10,20 +10,20 @@ react-moveable와 react-selecto를 사용해 사용자가 직접 스티커를 �
 
 # Utilites
 
-## 1. 로그인 회원가입 기능
+### 1. 로그인 회원가입 기능
 
 사용자는 회원가입을 통해 유저정보를 생성할 수 있고 로그인을 통해 앨범페이지와 커뮤니티에 들어갈 수 있습니다. 저장했던 포토카드를 불러올수 있고 그것을 커뮤니티에 올릴 수 있습니다.
 redux를 이용해 auth시스템을 만들었습니다.
 
 >Using Skills : mongodb, mongoose, nodejs, redux
 
-## 2. 앨범기능
+### 2. 앨범기능
 
 만들고 저장했던 포토카드를 불러올수 있습니다. 만들었던 날짜를 통해서 만들었던 포토카드를 검색할 수 있습니다. 앨범에서 사용자는 만들었던 포토카드를 삭제하거나, 다운로드할 수 있습니다.
 
 >Using Skills : js-file-download
 
-## 3. 포토카드 만들기 기능
+### 3. 포토카드 만들기 기능
 
 왼쪽의 포토카드를 꾸밀수 있는 공간과 오른쪽의 포토카드를 꾸밀 수 있는 스티커를 선택할 수 있는 공간으로 나누어져 있습니다.
 
@@ -40,7 +40,7 @@ react-dropzone을 사용하여 +모양을 클릭하면 포토카드 모양의 �
 
 >Using Skills : react-moveable, react-selecto, react-dropzone, html2canvas, cloudinary
 
-## 4. 커뮤니티 기능
+### 4. 커뮤니티 기능
 
 >**1. 게시판**
 
