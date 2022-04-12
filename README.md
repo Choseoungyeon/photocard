@@ -1,7 +1,8 @@
 # Photocard
 
-![ffs](https://user-images.githubusercontent.com/97166696/162904799-f9593f15-f43c-463c-add6-69392e2a82bd.png)
+![cvxcb](https://user-images.githubusercontent.com/97166696/162905129-7f6301b0-54ee-4a3c-a707-d783d9717156.PNG)
 
+**https://murmuring-springs-51108.herokuapp.com/**
 
 포토카드 꾸미기 사이트입니다.
 
