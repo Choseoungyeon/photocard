@@ -112,20 +112,20 @@ slick 슬라이더에 선택된 포토카드들이 반영됩니다. 오른쪽의
 # Skills
 
 백엔드
->1. nodejs
->2. mongodb
->3. cloudinary
++ nodejs
++ mongodb
++ cloudinary
 
 프론트엔드
->1. react
->2. redux
->3. react-dom
->4. react-moveable
->5. react-selecto
->6. react-slick
->7. html2canvas
->8. react-dropzone
->9. react-icons
++ react
++ redux
++ react-dom
++ react-moveable
++ react-selecto
++ react-slick
++ html2canvas
++ react-dropzone
++ react-icons
 
 <br />
 <br />
