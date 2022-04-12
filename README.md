@@ -1,4 +1,7 @@
 # Photocard
+
+![cvxcb](https://user-images.githubusercontent.com/97166696/162904317-31a4c857-11de-478f-8240-d36c9321dd7e.PNG)
+
 포토카드 꾸미기 사이트입니다.
 
 mongodb와 nodejs, 그리고 react를 사용하여 만들었고 heroku를 통해 배포하였습니다.
