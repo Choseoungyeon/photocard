@@ -1,6 +1,7 @@
 # Photocard
 
-![cvxcb](https://user-images.githubusercontent.com/97166696/162904317-31a4c857-11de-478f-8240-d36c9321dd7e.PNG)
+![ffs](https://user-images.githubusercontent.com/97166696/162904799-f9593f15-f43c-463c-add6-69392e2a82bd.png)
+
 
 포토카드 꾸미기 사이트입니다.
 
