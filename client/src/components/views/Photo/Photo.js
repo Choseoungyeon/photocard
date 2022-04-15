@@ -5,7 +5,6 @@ import axios from 'axios'
 import img_plus from "../../../img/Nav/img_plus.svg"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFillDrip, faRibbon, faStar, faTimes, faCaretRight } from '@fortawesome/free-solid-svg-icons'
-import Selecto from "react-selecto";
 import Moveable from "react-moveable";
 import Dropzone from 'react-dropzone'
 import html2canvas from "html2canvas";
@@ -39,13 +38,12 @@ function Photo(props) {
   }
 
   const saveAs = async (img) => {
-    setLoading(true)
+    
     const test = {
       can: img
     }
     const ImgInfo = await axios.post('/api/photocard/image', test)
     const images1 = ImgInfo.data.result
-    console.log(images1)
 
     const dateFunction = () => {
       const today = new Date();
@@ -73,6 +71,7 @@ function Photo(props) {
   };
 
   const printDocument = domElement => {
+    setLoading(true)
     html2canvas(domElement , { logging: false, letterRendering: 1, useCORS: true }).then(canvas => {
       saveAs(canvas.toDataURL('image/png'));
     });
@@ -102,14 +101,6 @@ function Photo(props) {
     reader.readAsDataURL(files[0])
   }
 
-  const imgDeleteHandler = (e)=>{
-    let body = Img
-    let pod  = body.indexOf(e)
-    body.splice(pod, 1)
-    setImg(body)
-    setTargets([])
-  }
-
   const testFun = () => {
     if (photoRef.current === undefined || photoRef.current === null) {
 
@@ -123,6 +114,29 @@ function Photo(props) {
       })
     }
   }
+
+  const ClickHandler =(item)=>{
+    setTargets([item.target.offsetParent])
+    console.log(item.target.offsetParent)
+  }
+
+  const imgDeleteHandler = (e)=>{
+    let body = Img
+    let pod  = body.indexOf(e)
+    body.splice(pod, 1)
+    setImg(body)
+    setTargets([])
+    console.log("run")
+  }
+
+  const cancleHandler = ()=>{
+    if(targets.length>0){
+      setTargets([])
+    }else{
+
+    }
+  }
+
 
   useEffect(() => {
     let body = { FillDrip: ["#CACFE3", "#838BB2", "#E4A99B", "#F2EEE5","#000000"] }
@@ -272,9 +286,6 @@ function Photo(props) {
           target.style.transform
             = `translate(${drag.beforeTranslate[0]}px, ${drag.beforeTranslate[1]}px) rotate(${frame.rotate}deg) `;
         }}
-        // onResizeEnd={({ target, isDrag, clientX, clientY }) => {
-        //   console.log("onResizeEnd", target, isDrag);
-        // }}
         rotatable={true}
         throttleRotate={0}
         rotationPosition="top"
@@ -289,51 +300,19 @@ function Photo(props) {
           target.style.transform = `translate(${drag.beforeTranslate[0]}px, ${drag.beforeTranslate[1]}px) rotate(${beforeRotate}deg) `;
         }}
       ></Moveable>
-      <Selecto
-        ref={selectoRef}
-        dragContainer={".photo_left"}
-        selectableTargets={[".elements"]}
-        hitRate={0}
-        selectByClick={true}
-        selectFromInside={false}
-        toggleContinueSelect={["shift"]}
-        ratio={0}
-        onDragStart={e => {
-          const moveable = moveableRef.current;
-          const target = e.inputEvent.target;
-          if (
-            moveable.isMoveableElement(target)
-            || targets.some(t => t === target || t.contains(target))
-          ) {
-            e.stop();
-          }
-        }}
-        onSelectEnd={e => {
-          const moveable = moveableRef.current;
-          setTargets(e.selected);
-
-          if (e.isDragStart) {
-            e.inputEvent.preventDefault();
-
-            setTimeout(() => {
-              moveable.dragStart(e.inputEvent);
-            });
-          }
-        }}
-      ></Selecto>
-      <div className='photo_left' ref={photoRef}>
+      <div className='photo_left' ref={photoRef} onClick={cancleHandler}>
         <div className='photoCard' ref={canvasRef} >
           {Img.map((e) => (
-            <div key={e.key} id={e.key} className='Img_absolute elements target'>
-              <div className='deleteButton' id={`${e.key}_Delete`} style={{ display: "none" }} onClick={() => imgDeleteHandler(e)}><FontAwesomeIcon style={{ width: 15, height: "auto", cursor: "pointer" }} icon={faTimes} /></div>
-              <img src={e.img} alt="" />
+            <div key={e.key} id={e.key} className='Img_absolute' style={{cursor:"pointer"}}>
+              <div className='deleteButton' id={`${e.key}_Delete`} style={{ display: "none" }} onClick={() => imgDeleteHandler(e)} onTouchStart={() => imgDeleteHandler(e)}><FontAwesomeIcon style={{ width: 15, height: "auto", cursor: "pointer" }} icon={faTimes} /></div>
+              <img src={e.img} alt="" onClick={ClickHandler} />
             </div>
           ))}
           <Dropzone onDrop={dropHandler}>
             {({ getRootProps, getInputProps }) => (
               <div className='photoZone' {...getRootProps()}>
                 {Attachment.map((e,index) => (
-                  <img key={index} style={{ width: "auto", height: "100%" }} src={e} alt="img" className='elements' ref={chaseRef} />
+                  <img key={index} style={{ width: "auto", height: "100%" }} src={e} alt="img" ref={chaseRef} onClick={ClickHandler} />
                 ))}
                 <img src={img_plus} className="img_plus" alt="" />
                 <input {...getInputProps()} />
@@ -366,3 +345,4 @@ function Photo(props) {
 }
 
 export default Photo;
+
