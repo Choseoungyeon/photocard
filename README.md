@@ -120,7 +120,6 @@ slick 슬라이더에 선택된 포토카드들이 반영됩니다. 오른쪽의
 + redux
 + react-dom
 + react-moveable
-+ react-selecto
 + react-slick
 + html2canvas
 + react-dropzone
