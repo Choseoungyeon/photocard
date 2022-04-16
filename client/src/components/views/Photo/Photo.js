@@ -117,7 +117,10 @@ function Photo(props) {
 
   const ClickHandler =(item)=>{
     setTargets([item.target.offsetParent])
-    console.log(item.target.offsetParent)
+  }
+
+  const ImgClickHandler =(item)=>{
+    setTargets([item.target])
   }
 
   const imgDeleteHandler = (e)=>{
@@ -312,7 +315,7 @@ function Photo(props) {
             {({ getRootProps, getInputProps }) => (
               <div className='photoZone' {...getRootProps()}>
                 {Attachment.map((e,index) => (
-                  <img key={index} style={{ width: "auto", height: "100%" }} src={e} alt="img" ref={chaseRef} onClick={ClickHandler} />
+                  <img key={index} style={{ width: "auto", height: "100%" }} src={e} alt="img" ref={chaseRef} onClick={ImgClickHandler} />
                 ))}
                 <img src={img_plus} className="img_plus" alt="" />
                 <input {...getInputProps()} />
