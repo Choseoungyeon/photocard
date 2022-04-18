@@ -45,7 +45,7 @@ function CommentSingle(props) {
                       </div>
                       <p style={{ cursor: "pointer" }} onClick={replyHandler}>reply to</p>
                   </div>
-                  {OpenReply && <CommentWrite replyId={props.commentInfo._id}/>}
+                  {OpenReply && <CommentWrite replyId={props.commentInfo._id} refreshFunction={replyHandler}/>}
                   <div className='coment_reply'>
                       {Refly.length===0 ? null : <p onClick={replyCommentHandler}><FaSortDown style={{ width: "18px", height: "auto", marginRight: "5px" }} />답글보기({Refly.length})</p>}
                       {ReplyComment && Refly.map((e, index) => (

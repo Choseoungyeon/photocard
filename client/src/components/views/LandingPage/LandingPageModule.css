@@ -183,7 +183,7 @@ footer p{
 
     .landingPage_makeCard_right{
         min-width: auto;
-        width:100vw;
+        width:80vw;
         max-width: 420px;
     }
 
@@ -205,8 +205,22 @@ footer p{
     }
 
     .section_info h2{
-        font-size: 35px;
+        font-size: 28px;
         margin-top: 35px;
+    }
+
+    .section_info p{
+        font-family: 'Nanum Gothic', sans-serif;
+        font-size: 15px;
+        line-height: 30px;
+        margin-top: 25px;
+    }
+
+    .section_info button{
+        width:110px;
+        height: 40px;
+        font-size: 15px;
+        line-height: 40px;
     }
 
     .landingPage_album .ladingPage_centerbox{
@@ -222,7 +236,7 @@ footer p{
     .landingPage_main_right{
         min-width:auto;
         max-width: 380px;
-        width:90vw
+        width:80vw
     }
 
     .landingPage_community .section_info {
@@ -242,6 +256,6 @@ footer p{
     .landingPage_album_right {
         min-width: auto;
     max-width: 380px;
-    width: 90vw;
+    width: 80vw;
     }
 }

@@ -1,4 +1,5 @@
 import React, {useState, useEffect, useRef} from 'react'
+import { Link } from "react-router-dom"
 import { useNavigate } from 'react-router-dom';
 import "./CommunityModule.css"
 import community_decoration from '../../../img/Form/form_decoration.svg'
@@ -136,6 +137,7 @@ function Community() {
             <li key={`pagination${e}`} id={`pagination${e}`} onClick={(item) => onPageHandler(e, item)}>{e}</li>
           )}
         </ul>
+        <button className='community_button'><Link to={"/community/upload"}>Upload</Link></button>
       </div>
     </div>
   )

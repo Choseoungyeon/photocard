@@ -54,11 +54,11 @@
     margin-top: 0px;
         position: absolute;
         padding-top: 85px;
-        top:80px;
+        top:65px;
         right: 0px;
         width:190px;
         transform: translateX(190px);
-        height: calc(100vh - 80px);
+        height: calc(100vh - 65px);
         z-index: 3;
         background-color: #F6F1E4;
         transition: 0.3s;
@@ -92,6 +92,16 @@
 }
 
 @media screen and (max-width:768px){
+
+    .nav_container{
+        height: 65px;
+    }
+
+    .nav_container h1{
+        width:80px;
+        height: auto;
+    }
+
     .centerbox{
         width:86%;
     }
@@ -102,15 +112,14 @@
 
     .Nav_mobile {
         position: fixed;
-        top: 30px;
+        top: 22px;
         right: 7vw;
         cursor: pointer;
-        width: 35px;
-        height: 24px;
+        width: 30px;
+        height: 20px;
         display: flex;
         justify-content: space-between;
         flex-direction: column;
-        
     }
 
     .Nav_mobile span{
@@ -126,13 +135,13 @@
     }
 
     .Nav_mobile.on span:nth-child(1) {
-        width: 38px;
+        width: 32px;
         transform: rotate(35deg);
         transform-origin: left top;
     }
     
     .Nav_mobile.on span:nth-child(3) {
-        width: 38px;
+        width: 32px;
         transform: rotate(-35deg);
         transform-origin: left bottom;
     }
@@ -146,9 +155,9 @@
         opacity: 0.6;
         position: fixed;
         width: 100%;
-        height: calc(100vh - 80px);
+        height: calc(100vh - 65px);
         left: 0px;
-        top: 80px;
+        top: 65px;
         z-index: 2;
         display: none;
     }

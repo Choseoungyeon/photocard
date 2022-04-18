@@ -251,3 +251,10 @@
     }
     
 }
+
+@media screen and (max-width:768px){
+    .container{
+        height: calc(100vh - 65px);
+        margin-top: 65px;
+    }
+}

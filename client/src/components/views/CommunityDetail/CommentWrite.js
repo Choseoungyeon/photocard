@@ -28,7 +28,7 @@ function CommentWrite(props) {
         console.log(variables)
 
         dispatch(saveComments(variables))
-        .then(setContent(""))
+        .then(setContent("")).then(props.refreshFunction())
     }
 
     useEffect(() => {

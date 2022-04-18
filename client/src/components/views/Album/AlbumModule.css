@@ -258,4 +258,9 @@
         top:unset;
         bottom: 8vw;
     }
+
+    .album_wrap{
+        height: calc(100vh - 65px);
+        margin-top: 65px;
+    }
 }

@@ -207,3 +207,10 @@
 .upload_albumList.on{
     display: block;
 }
+
+@media screen and (max-width:768px){
+    .uploadeDetail_wrap{
+        height: calc(100vh - 65px);
+        margin-top: 65px;
+    }
+}

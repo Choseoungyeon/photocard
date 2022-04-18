@@ -16,6 +16,10 @@ function Comment() {
     }
   }, [commentArray])
 
+  const noneFunction = ()=>{
+    
+  }
+
     
   return (
       <div className='comment_wrap'>
@@ -26,7 +30,7 @@ function Comment() {
             <CommentSingle commentInfo={e} key={index}/>
           ))  :null }
           
-          <CommentWrite />
+          <CommentWrite refreshFunction={noneFunction}/>
       </div>
     
   )
