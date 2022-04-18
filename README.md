@@ -2,6 +2,8 @@
 
 ![cvxcb](https://user-images.githubusercontent.com/97166696/162905129-7f6301b0-54ee-4a3c-a707-d783d9717156.PNG)
 
+https://murmuring-springs-51108.herokuapp.com/
+
 포토카드 꾸미기 사이트입니다.
 
 mongodb와 nodejs, 그리고 react를 사용하여 만들었고 heroku를 통해 배포하였습니다.
