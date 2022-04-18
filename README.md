@@ -51,16 +51,15 @@ react-dropzone을 사용하여 +모양을 클릭하면 포토카드 모양의 �
 사이즈를 조정하거나 위치를 조정할 수 있습니다.
 
 그 후에 오른쪽의 상자에서 원하는 스티커를 클릭하면 클릭한 모양의 스티커가 똑같이 쪽의 포토카드의 오른쪽 상단에 나타납니다. 
-왼쪽에 나타난 스티커를 클릭하면 스티커를 원하는대로 수정할 수 있는 moveable박스가 생성됩니다. react-selecto를 이용해 클릭한 스티커만 oveable박스가 나타나도록 코딩했습니다. 
-사용자는 moveable박스를 이용해 해당 스티커의 사이즈를 수정하거나 원하는 위치에 이동시키거나 rotate시킬 수 있습니다. shift키나 전체 드래그를 해 전체 스티커를 선택하여 
-한꺼번에 이동시킬 수 있습니다.
+왼쪽에 나타난 스티커를 클릭하면 스티커를 원하는대로 수정할 수 있는 moveable박스가 생성됩니다. 클릭한 스티커만 moveable박스가 나타나도록 코딩했습니다. 
+사용자는 moveable박스를 이용해 해당 스티커의 사이즈를 수정하거나 원하는 위치에 이동시키거나 rotate시킬 수 있습니다. 
 
 포토카드 꾸미기가 완료되었다면, 오른쪽 상자아래의 완성버튼을 눌러주세요. 해당 포토카드를 편집한 날짜와 함께, 꾸민 포토카드는 my album에 저장됩니다. html2canvas를 이용하여
 다 꾸민 카드의 이미지를 png로 cloudinary에 저장하고, 그 저장한 이미지의 주소를 다시 mongodb의 데이터베이스에 저장하는 방식으로 기능을 구현했습니다.
 
 <br />
 
->Using Skills : react-moveable, react-selecto, react-dropzone, html2canvas, cloudinary
+>Using Skills : react-moveable, react-dropzone, html2canvas, cloudinary
 
 <br />
 <br />
@@ -121,7 +120,6 @@ slick 슬라이더에 선택된 포토카드들이 반영됩니다. 오른쪽의
 + redux
 + react-dom
 + react-moveable
-+ react-selecto
 + react-slick
 + html2canvas
 + react-dropzone
