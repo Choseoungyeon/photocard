@@ -132,11 +132,13 @@ function Photo(props) {
     console.log("run")
   }
 
-  const cancleHandler = ()=>{
+  const cancleHandler = (e)=>{
     if(targets.length>0){
-      setTargets([])
-    }else{
-
+      if(e.target.classList.value === "Img_absolute_img"){
+        setTargets([e.target.offsetParent])
+      }else{
+        setTargets([])
+      }
     }
   }
 
@@ -210,6 +212,7 @@ function Photo(props) {
         draggable={true}
         target={targets}
         snappable={Snap}
+        pinchable={true}
         snapThreshold={5}
         snapCenter={false}
         bounds={Test}
@@ -295,7 +298,6 @@ function Photo(props) {
         onRotateStart={({ set, target }) => {
           const frame = frameMap.get(target);
           set(frame.rotate);
-          console.log(frame)
         }}
         onRotate={({ target, beforeRotate, drag }) => {
           const frame = frameMap.get(target);
@@ -308,7 +310,7 @@ function Photo(props) {
           {Img.map((e) => (
             <div key={e.key} id={e.key} className='Img_absolute' style={{cursor:"pointer"}}>
               <div className='deleteButton' id={`${e.key}_Delete`} style={{ display: "none" }} onClick={() => imgDeleteHandler(e)} onTouchStart={() => imgDeleteHandler(e)}><FontAwesomeIcon style={{ width: 15, height: "auto", cursor: "pointer" }} icon={faTimes} /></div>
-              <img src={e.img} alt="" onClick={ClickHandler} />
+              <img src={e.img} alt="" onClick={ClickHandler} className="Img_absolute_img" />
             </div>
           ))}
           <Dropzone onDrop={dropHandler}>

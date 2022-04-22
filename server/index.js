@@ -184,6 +184,30 @@ app.post('/api/community/upload',(req, res) =>{
   console.log(req.body)
 })
 
+app.post('/api/community/upload',(req, res) =>{
+  const community = new Community(req.body)
+  community.save((err)=>{
+    if(err) return res.status(400).json({success:false, err})
+    return res.status(200).json({success:true})
+  })
+
+  console.log(req.body)
+})
+
+app.get('/api/community/delete_by_id', (req, res)=>{
+  let communityId = req.query.id
+  console.log(communityId)
+
+  Community.findOneAndDelete(
+    { _id: communityId},
+    { new: true },
+    (err) => {
+      if (err) return res.status(200).json({ success: false, err })
+      res.status(200).send({success:true})
+    }
+  )
+})
+
 app.get('/api/community/community_by_id', (req, res)=>{
   let productId = req.query.id
 

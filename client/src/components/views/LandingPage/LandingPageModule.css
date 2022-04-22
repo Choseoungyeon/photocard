@@ -103,6 +103,13 @@
     font-size: 18px;
     margin-top: 40px;
     color: #383838;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.section_info button:hover{
+    color:#fff;
+    background-color: #747474;
 }
 
 .landingPage_album .section_info{

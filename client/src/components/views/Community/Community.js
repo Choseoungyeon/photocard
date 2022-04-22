@@ -92,6 +92,10 @@ function Community() {
     navigate(`/community/${communityId}`)
   }
 
+  const onUploadHandler = ()=>{
+    navigate("/community/upload")
+  }
+
   useEffect(() => {
     let body = {
       skip: Skip,
@@ -137,7 +141,7 @@ function Community() {
             <li key={`pagination${e}`} id={`pagination${e}`} onClick={(item) => onPageHandler(e, item)}>{e}</li>
           )}
         </ul>
-        <button className='community_button'><Link to={"/community/upload"}>Upload</Link></button>
+        <button className='community_button' onClick={onUploadHandler}>Upload</button>
       </div>
     </div>
   )

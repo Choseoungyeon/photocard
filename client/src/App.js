@@ -19,9 +19,9 @@ import Auth from './hoc/auth'
 function App() {
   const NewLoginPage = Auth(LoginPage, false);
   const NewRegisterPage = Auth(RegisterPage, false)
-  const NewPhoto = Auth(Photo, null)
+  const NewPhoto = Auth(Photo, true)
   const NewLandingPage = Auth(LandingPage, null)
-  const NewAlbum = Auth(Album, null)
+  const NewAlbum = Auth(Album, true)
   const NewCommunity = Auth(Community, null)
   const NewUploadPage = Auth(UploadPage, true)
   const NewCommunityDetail = Auth(CommunityDetail, true)

@@ -61,6 +61,17 @@ function CommunityDetail(props) {
         navigate(`/community/modifyPage/${communityId}`)
       }
 
+    const deletePageHandler = (communityId)=>{
+        axios.get(`/api/community/delete_by_id?id=${communityId}&type=single`)
+        .then(response =>{
+            if(response.data.success){
+                navigate("/")
+            }else{
+                alert("error")
+            }
+        })
+    }
+
     const settings = {
         dots: true,
         infinite: true,
@@ -138,7 +149,7 @@ function CommunityDetail(props) {
                             User===Select.writer ? 
                                 <div className='modify_button'>
                                     <button className='Community_button' onClick={()=>modifyPageHandler(communityId)}>MODIFY</button>
-                                    <button className='Community_button'>DELETE</button>
+                                    <button className='Community_button' onClick={()=>deletePageHandler(communityId)}>DELETE</button>
                                 </div> :
                             null}
                     </div>

@@ -146,16 +146,9 @@
     text-transform: uppercase;
 }
 
-.community_button a{
-    color:#383838;
-}
-
 .community_button:hover{
-    background-color: #747474;
-}
-
-.community_button:hover a{
     color:#fff;
+    background-color: #747474;
 }
 
 .community_form_search input::-webkit-input-placeholder{
