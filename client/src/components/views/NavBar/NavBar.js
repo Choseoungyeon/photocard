@@ -126,7 +126,7 @@ function Nav() {
         <span></span>
         <span></span>
       </div>
-    <div className='Nav_modal' ref={modal02}></div>
+    <div className='Nav_modal' ref={modal02} onClick={deletehandler}></div>
   </div>;
 }
 
