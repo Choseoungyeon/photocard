@@ -195,6 +195,10 @@ function Photo(props) {
     }
   }, [targets])
 
+  const test = ()=>{
+    
+  }
+
   useEffect(() => {
     if(Attachment.length>0){
       chaseRef.current.style.transform = `translate(0px, 0px) rotate(0deg) `;
