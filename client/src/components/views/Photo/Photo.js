@@ -196,7 +196,7 @@ function Photo(props) {
   }, [targets])
 
   const test = ()=>{
-    
+    console.log("test")
   }
 
   useEffect(() => {
