@@ -8,8 +8,9 @@ https://murmuring-springs-51108.herokuapp.com/
 
 test 로그인을 하실때 
 
-email : test1@naver.com,
-password : test1234
+email : test1234@naver.com
+
+password : testPass368
 
 로 입력하시면 됩니다 현재 버튼을 통한 자동로그인 기능 개발중입니다
 
