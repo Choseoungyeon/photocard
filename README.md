@@ -6,6 +6,13 @@ https://murmuring-springs-51108.herokuapp.com/
 
 포토카드 꾸미기 사이트입니다.
 
+test 로그인을 하실때 
+
+email : test1@naver.com,
+password : test1234
+
+로 입력하시면 됩니다 현재 버튼을 통한 자동로그인 기능 개발중입니다
+
 mongodb와 nodejs, 그리고 react를 사용하여 만들었고 heroku를 통해 배포하였습니다.
 
 react-moveable와 react-selecto를 사용해 사용자가 직접 스티커를 화면상에서 조절하여 카드를 꾸밀수 있게 만들었습니다.
