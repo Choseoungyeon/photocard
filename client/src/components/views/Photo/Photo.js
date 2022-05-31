@@ -208,6 +208,8 @@ function Photo(props) {
     }
     
   }, [Attachment])
+
+  console.log(frameMap)
   
   return <div className="container" >
     <div className="photo_container">

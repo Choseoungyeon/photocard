@@ -1,4 +1,5 @@
 import React, {useState,useEffect,useRef} from 'react'
+import { useNavigate } from 'react-router-dom';
 import uploadeDetail_decoration from '../../../img/Form/form_decoration.svg'
 import upload_photocard from '../../../img/Upload/photocard_upload.png'
 import { useParams} from "react-router";
@@ -19,6 +20,7 @@ function ModifyPage(props) {
     const modal02 = useRef(null)
     const [Select, setSelect] = useState([])
     const {communityId} = useParams();
+    const navigate = useNavigate(); 
 
     const onTitleHandler =(event)=>{
         setTitle(event.target.value)
@@ -100,6 +102,34 @@ function ModifyPage(props) {
         modal02.current.classList.remove("on")
     }
 
+    const dateFunction = () => {
+        const today = new Date();
+        const dates = String(today.getDate()).padStart(2, "0");
+        const months = String(today.getMonth()+1).padStart(2, "0");
+        const years = String(today.getFullYear());
+  
+        return `${years} ${months} ${dates}`
+    }
+
+    const onSubmitHandler = (e)=>{
+        e.preventDefault()
+        let body = {
+            images : Select,
+            date : dateFunction(),
+            title : Title,
+            content : Content,
+        }
+
+        axios.post(`/api/community/modify_by_id?id=${communityId}&type=single`, body)
+            .then(response => {
+                if (response.data.success) {
+                    navigate('/')
+                } else {
+                    alert('상품 업로드에 실패했습니다.')
+                }
+            })
+    }
+
     useEffect(() => {
         axios.get(`/api/community/community_by_id?id=${communityId}&type=single`)
             .then(response => {
@@ -161,7 +191,7 @@ function ModifyPage(props) {
                           <label>Content :</label>
                           <textarea value={Content} onChange={onContentHandler} placeholder="write your content here...." />
                       </div>
-                      <button className="Community_button" >SUBMIT</button>
+                      <button className="Community_button" onClick={onSubmitHandler} >SUBMIT</button>
                   </form>
               </div>
           </div>

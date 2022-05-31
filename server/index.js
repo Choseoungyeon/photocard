@@ -208,6 +208,26 @@ app.get('/api/community/delete_by_id', (req, res)=>{
   )
 })
 
+app.post('/api/community/modify_by_id', (req, res)=>{
+  let communityId = req.query.id
+  console.log(communityId)
+
+  Community.findOneAndUpdate(
+    { _id: communityId},
+    {
+      title:req.body.title,
+      images:req.body.images,
+      content:req.body.content,
+      date:req.body.date
+    },
+    { new: true },
+    (err) => {
+      if (err) return res.status(200).json({ success: false, err })
+      res.status(200).send({success:true})
+    }
+  )
+})
+
 app.get('/api/community/community_by_id', (req, res)=>{
   let productId = req.query.id
 
